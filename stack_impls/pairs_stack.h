@@ -4,7 +4,7 @@
 
 #ifndef UNTITLED2_PAIRS_STACK_H
 #define UNTITLED2_PAIRS_STACK_H
-#include "stack_interface.h"
+#include "istack.h"
 #include <stack>
 
 using namespace std;

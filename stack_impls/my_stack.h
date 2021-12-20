@@ -3,7 +3,7 @@
 //
 #ifndef UNTITLED2_MY_STACK_H
 #define UNTITLED2_MY_STACK_H
-#include "stack_interface.h"
+#include "istack.h"
 #include <stack>
 
 using namespace std;

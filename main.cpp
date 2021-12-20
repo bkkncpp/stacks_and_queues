@@ -3,7 +3,7 @@
 #include <iostream>
 #include <stack>
 #include <vector>
-#include "my_stack.h"
+#include "stack_impls/my_stack.h"
 
 using namespace std;
 
