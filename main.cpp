@@ -1,3 +1,4 @@
+//#include "queues_impls/trees/node.h"
 #include <algorithm>
 #include <deque>
 #include <iostream>
@@ -5,7 +6,6 @@
 #include <unordered_map>
 #include <unordered_set>
 #include <vector>
-//#include "queues_impls/two_stacks_queue.h"
 
 using namespace std;
 
@@ -219,6 +219,34 @@ void sliding_window_min( const vector<int> v, int m )
     }
 }
 
+template <class T>
+void reverse_vector( vector<T>& v )
+{
+    int size = v.size();
+    for( int i = 0; i < size; ++i )
+    {
+        std::swap( v[i], v[size - 1 - i] );
+    }
+}
+
+void fizz_buzz()
+{
+    for( int i = 0; i < 100; ++i )
+    {
+        if( i % 3 == 0 && i % 5 == 0 )
+        {
+            cout << "fizzbuzz" << endl;
+            continue;
+        }
+        else if( i % 3 == 0 )
+            cout << "fizz" << endl;
+        else if( i % 5 == 0 )
+            cout << "buzz" << endl;
+        else
+            cout << i << endl;
+    }
+}
+
 int main()
 {
     //    // solution 1
@@ -243,10 +271,15 @@ int main()
     // string s = "2.0";
     // printf("%9s",s.c_str());
 
-    vector<int> input = { 5, 1, 3, 2, 4, 6, 1, 7, 3, 2, 8 };
+    // vector<int> input = { 5, 1, 3, 2, 4, 6, 1, 7, 3, 2, 8 };
 
-    sliding_window_min( input, 3 );
+    //    sliding_window_min( input, 3 );
 
+//    node<int> root;
+//    root.val = 1;
+//    root.left = 1;
+
+    fizz_buzz();
     return 0;
 }
 /*
