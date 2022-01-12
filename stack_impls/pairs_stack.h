@@ -18,24 +18,37 @@ using namespace std;
 class pairs_stack : istack
 {
 private:
-    stack<pair<int, int>> m_stack;
+    stack<pair<int, int>> m_stack;//<value, cur_min>
 
 public:
     void push( int val ) override
     {
-        m_stack.emplace( val, m_stack.empty() ? val : min( m_stack.top().second, val ) );
+        m_stack.emplace( val, m_stack.empty() ? val : ::min( m_stack.top().second, val ) );
     }
-    int pop() override
+    void pop() override
     {
-        if( m_stack.empty() )
-            throw std::exception();
-        int last = m_stack.top().first;
         m_stack.pop();
-        return last;
     }
+
+    int top() override
+    {
+        return m_stack.top().first;
+    }
+
+public:
     int min()
     {
         return m_stack.top().second;
+    }
+
+public:
+    int size() override
+    {
+        return m_stack.size();
+    }
+    bool empty() override
+    {
+        return m_stack.empty();
     }
 };
 #endif // UNTITLED2_PAIRS_STACK_H
